@@ -21,39 +21,9 @@ class _TrainingLogState extends State<TrainingLog> {
   final date = f.format(DateTime.now());
 
   void openDetails(int i) {
+    final Training randomTraining = Training.random("Training #${i + 1}");
 
-
-    final Random random = new Random();
-    final randomHeartRate = () => HeartRate({
-      Duration(minutes: 0): 60 + random.nextInt(140),
-      Duration(minutes: 1): 60 + random.nextInt(140),
-      Duration(minutes: 2): 60 + random.nextInt(140),
-      Duration(minutes: 3): 60 + random.nextInt(140),
-      Duration(minutes: 4): 60 + random.nextInt(140),
-      Duration(minutes: 5): 60 + random.nextInt(140),
-      Duration(minutes: 6): 60 + random.nextInt(140),
-      Duration(minutes: 7): 60 + random.nextInt(140),
-      Duration(minutes: 8): 60 + random.nextInt(140),
-      Duration(minutes: 9): 60 + random.nextInt(140),
-      Duration(minutes: 10): 60 + random.nextInt(140),
-    });
-
-    final HeartRate swimHeartRate = randomHeartRate();
-    final HeartRate bikeHeartRate = randomHeartRate();
-    final HeartRate runHeartRate = randomHeartRate();
-
-    final Training training = new Training(
-      name: "Training #${i + 1}",
-      distance: olimpicDistance,
-      swimDuration: Duration(minutes: 10),
-      bikeDuration: Duration(minutes: 10),
-      runDuration: Duration(minutes: 10),
-      swimHeartRate: swimHeartRate,
-      bikeHeartRate: bikeHeartRate,
-      runHeartRate: runHeartRate,
-    );
-
-    Navigator.of(context).push(new MaterialPageRoute(builder: (c) => TrainingDetails(training: training)));
+    Navigator.of(context).push(new MaterialPageRoute(builder: (c) => TrainingDetails(training: randomTraining)));
   }
 
   @override
