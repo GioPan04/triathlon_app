@@ -22,9 +22,9 @@ class _TrainingLogState extends State<TrainingLog> {
 
   void openDetails(int i) {
 
-    final Random random = new Random();
 
-    final HeartRate heartRate = HeartRate({
+    final Random random = new Random();
+    final randomHeartRate = () => HeartRate({
       Duration(minutes: 0): 60 + random.nextInt(140),
       Duration(minutes: 1): 60 + random.nextInt(140),
       Duration(minutes: 2): 60 + random.nextInt(140),
@@ -38,15 +38,19 @@ class _TrainingLogState extends State<TrainingLog> {
       Duration(minutes: 10): 60 + random.nextInt(140),
     });
 
+    final HeartRate swimHeartRate = randomHeartRate();
+    final HeartRate bikeHeartRate = randomHeartRate();
+    final HeartRate runHeartRate = randomHeartRate();
+
     final Training training = new Training(
       name: "Training #${i + 1}",
       distance: olimpicDistance,
       swimDuration: Duration(minutes: 10),
-      bikeDuration: Duration(minutes: 5),
-      runDuration: Duration(minutes: 9),
-      swimHeartRate: heartRate,
-      bikeHeartRate: heartRate,
-      runHeartRate: heartRate
+      bikeDuration: Duration(minutes: 10),
+      runDuration: Duration(minutes: 10),
+      swimHeartRate: swimHeartRate,
+      bikeHeartRate: bikeHeartRate,
+      runHeartRate: runHeartRate,
     );
 
     Navigator.of(context).push(new MaterialPageRoute(builder: (c) => TrainingDetails(training: training)));
