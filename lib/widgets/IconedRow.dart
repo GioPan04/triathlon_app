@@ -16,7 +16,7 @@ class IconedRow extends StatelessWidget {
           SizedBox(width: 5),
           Icon(icon, size: 28,),
           SizedBox(width: 5),
-          Text(text, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+          Text(text, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
         ],
       ),
     );

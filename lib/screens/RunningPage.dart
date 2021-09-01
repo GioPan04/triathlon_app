@@ -21,13 +21,45 @@ class _RunningState extends State<Running> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             IconedRow(icon: Icons.pool, text: "Swim"),
             IconedRow(icon: Icons.timer, text: "10:43"),
             IconedRow(icon: Icons.favorite_outline, text: "130bpm"),
-            Text("1000mt")
+            
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '1000mt',
+                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'of ' + (widget.distance.swimDistance * 1000).toInt().toString(),
+                      style: TextStyle(fontSize: 25),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          
           ],
+        ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ElevatedButton(
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Text("Exit"),
+            ),
+            onPressed: () {},
+          ),
         ),
       ),
     );
