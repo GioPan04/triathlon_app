@@ -1,9 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:triathlon_app/models/Distance.dart';
-import 'package:triathlon_app/models/HeartRate.dart';
 import 'package:triathlon_app/models/Training.dart';
 import 'package:triathlon_app/screens/TrainingDetails.dart';
 

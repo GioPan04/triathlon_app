@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:triathlon_app/models/Distance.dart';
 import 'package:triathlon_app/screens/HomePage.dart';
 
 void main() {

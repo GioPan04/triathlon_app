@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:triathlon_app/models/Training.dart';
-import 'package:triathlon_app/widgets/HeartRateChart.dart';
-import 'package:triathlon_app/extensions/FormattedDuration.dart';
 import 'package:triathlon_app/widgets/TrainingTileSummary.dart';
 
 class TrainingDetails extends StatefulWidget {
