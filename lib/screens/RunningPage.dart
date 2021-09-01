@@ -58,7 +58,7 @@ class _RunningState extends State<Running> {
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Text("Exit"),
             ),
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
           ),
         ),
       ),

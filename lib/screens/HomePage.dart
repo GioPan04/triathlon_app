@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:triathlon_app/models/Distance.dart';
 import 'package:triathlon_app/screens/RunningPage.dart';
+import 'package:triathlon_app/screens/TraningLogPage.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,6 +17,10 @@ class _HomeState extends State<Home> {
 
   void start() {
     Navigator.of(context).push(new MaterialPageRoute(builder: (c) => Running(distance: distances[currentDistance])));
+  }
+
+  void openLog() {
+    Navigator.of(context).push(new MaterialPageRoute(builder: (c) => TrainingLog()));
   }
 
   @override
@@ -34,7 +39,8 @@ class _HomeState extends State<Home> {
                 currentDistance = distances.indexWhere((element) => element.name == e?.name)
               }),
             ),
-            ElevatedButton(onPressed: start, child: Text("Start"))
+            ElevatedButton(onPressed: start, child: Text("Start")),
+            TextButton(onPressed: openLog, child: Text("Log")),
           ],
         )
       ),
