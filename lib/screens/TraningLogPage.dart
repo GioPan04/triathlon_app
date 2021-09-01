@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:triathlon_app/models/Distance.dart';
+import 'package:triathlon_app/models/HeartRate.dart';
 import 'package:triathlon_app/models/Training.dart';
 import 'package:triathlon_app/screens/TrainingDetails.dart';
 
@@ -19,11 +22,21 @@ class _TrainingLogState extends State<TrainingLog> {
 
   void openDetails(int i) {
 
-    final HeartRate heartRate = {
-      Duration(seconds: 0): 100,
-      Duration(minutes: 1): 120,
-      Duration(minutes: 10): 150,
-    };
+    final Random random = new Random();
+
+    final HeartRate heartRate = HeartRate({
+      Duration(minutes: 0): 60 + random.nextInt(140),
+      Duration(minutes: 1): 60 + random.nextInt(140),
+      Duration(minutes: 2): 60 + random.nextInt(140),
+      Duration(minutes: 3): 60 + random.nextInt(140),
+      Duration(minutes: 4): 60 + random.nextInt(140),
+      Duration(minutes: 5): 60 + random.nextInt(140),
+      Duration(minutes: 6): 60 + random.nextInt(140),
+      Duration(minutes: 7): 60 + random.nextInt(140),
+      Duration(minutes: 8): 60 + random.nextInt(140),
+      Duration(minutes: 9): 60 + random.nextInt(140),
+      Duration(minutes: 10): 60 + random.nextInt(140),
+    });
 
     final Training training = new Training(
       name: "Training #${i + 1}",

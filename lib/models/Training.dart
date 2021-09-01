@@ -1,6 +1,5 @@
 import 'package:triathlon_app/models/Distance.dart';
-
-typedef HeartRate = Map<Duration,int>;
+import 'package:triathlon_app/models/HeartRate.dart';
 
 class Training {
   final String name;
