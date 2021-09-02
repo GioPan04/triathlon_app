@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:triathlon_app/models/Distance.dart';
+import 'package:triathlon_app/native/WatchChannel.dart';
 import 'package:triathlon_app/screens/RunningPage.dart';
 import 'package:triathlon_app/screens/TraningLogPage.dart';
 
@@ -16,6 +17,7 @@ class _HomeState extends State<Home> {
   List<Distance> distances = [olimpicDistance, ironManDistance, ironMan703Distance];
 
   void start() {
+    WatchChannel.sendString('bruh');
     Navigator.of(context).push(new MaterialPageRoute(builder: (c) => Running(distance: distances[currentDistance])));
   }
 
