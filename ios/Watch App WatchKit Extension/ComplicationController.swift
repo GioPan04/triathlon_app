@@ -1,8 +1,8 @@
 //
 //  ComplicationController.swift
-//  Triathlon Watch app Extension
+//  Watch App WatchKit Extension
 //
-//  Created by Gioele on 02/09/21.
+//  Created by Gioele on 06/09/21.
 //
 
 import ClockKit
