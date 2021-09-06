@@ -9,10 +9,11 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
+    
+    fileprivate var session: WCSession!
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
+        print("Activation complete")
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
@@ -23,7 +24,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet weak var label: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         if(WCSession.isSupported()) {
-            let session = WCSession.default
+            session = WCSession.default
             session.delegate = self
             session.activate()
         }
@@ -38,5 +39,4 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
     }
-
 }

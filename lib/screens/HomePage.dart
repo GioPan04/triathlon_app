@@ -26,6 +26,16 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      WatchChannel((data) {
+        showDialog(context: context, builder: (context) => AlertDialog(title: Text("Error"), content: Text(data)));
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
