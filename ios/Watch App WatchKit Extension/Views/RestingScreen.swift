@@ -12,7 +12,7 @@ struct RestingScreen: View {
         NavigationView {
             VStack {
                 Text("5").font(.largeTitle)
-                Text("seconds remaning").font(.caption2)
+                Text("seconds").font(.caption2)
             }
             
                 .navigationTitle("Resting")

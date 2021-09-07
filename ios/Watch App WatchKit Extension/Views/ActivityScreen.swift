@@ -16,6 +16,8 @@ struct ActivityScreen: View {
                         .font(.title)
                     Text("500mt")
                         .font(.title2)
+                    Text("10mt/s")
+                        .font(.caption)
                     Spacer()
                 }
                 Spacer()
