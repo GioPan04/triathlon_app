@@ -28,6 +28,7 @@
 		85797F5026E60F8F00C0FCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85797F4F26E60F8F00C0FCFC /* Assets.xcassets */; };
 		85797F5326E60F8F00C0FCFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85797F5226E60F8F00C0FCFC /* Preview Assets.xcassets */; };
 		85D230E426E1053A0028D84B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D230E326E1053A0028D84B /* HealthKit.framework */; };
+		85F5D99E26E75AEC00E391E8 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F5D99D26E75AEC00E391E8 /* StopWatch.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -126,6 +127,7 @@
 		85D230E026E0F73F0028D84B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		85D230E226E1053A0028D84B /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		85D230E326E1053A0028D84B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		85F5D99D26E75AEC00E391E8 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			children = (
 				8546B2FC26E626BD00B26771 /* ActivityModel.swift */,
 				8546B30126E6597F00B26771 /* Distance.swift */,
+				85F5D99D26E75AEC00E391E8 /* StopWatch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				8546B30226E6597F00B26771 /* Distance.swift in Sources */,
 				8546B30826E661E500B26771 /* RestingScreen.swift in Sources */,
 				85797F4626E60F8D00C0FCFC /* ContentView.swift in Sources */,
+				85F5D99E26E75AEC00E391E8 /* StopWatch.swift in Sources */,
 				85797F4426E60F8D00C0FCFC /* HostingController.swift in Sources */,
 				8546B2FA26E6266200B26771 /* ActivityRow.swift in Sources */,
 				8546B30626E65C8700B26771 /* ActivityScreen.swift in Sources */,

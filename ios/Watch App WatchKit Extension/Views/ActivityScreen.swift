@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ActivityScreen: View {
+    
+    @ObservedObject var stopWatch = StopWatch()
+    
     var body: some View {
         NavigationView {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text("00:00.00")
-                        .font(.title)
-                    Text("500mt")
+                    Text(stopWatch.disaplyedTimer)
                         .font(.title2)
+                    Text("500mt")
+                        .font(.title3)
                     Text("10mt/s")
                         .font(.caption)
                     Spacer()
@@ -23,6 +26,8 @@ struct ActivityScreen: View {
                 Spacer()
             }
                 .navigationTitle("Swimming")
+        }.onAppear {
+            stopWatch.start()
         }.padding()
     }
 }
