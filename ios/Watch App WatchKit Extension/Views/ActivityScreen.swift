@@ -15,19 +15,27 @@ struct ActivityScreen: View {
         NavigationView {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text(stopWatch.disaplyedTimer)
+                    Text(stopWatch.completeDisplay)
                         .font(.title2)
                     Text("500mt")
                         .font(.title3)
                     Text("10mt/s")
                         .font(.caption)
                     Spacer()
+                    NavigationLink(
+                        destination: RestingScreen(),
+                        label: {
+                            Text("Finish")
+                        })
+ 
                 }
                 Spacer()
             }
                 .navigationTitle("Swimming")
         }.onAppear {
             stopWatch.start()
+        }.onDisappear {
+            stopWatch.stop()
         }.padding()
     }
 }

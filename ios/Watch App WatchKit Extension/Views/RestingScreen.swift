@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct RestingScreen: View {
+    
+    @ObservedObject var stopwatch = StopWatch()
+    
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text("5").font(.largeTitle)
+                Text(stopwatch.secondsDisplay).font(.largeTitle)
                 Text("seconds").font(.caption2)
             }
             
                 .navigationTitle("Resting")
+        }.onAppear {
+            stopwatch.start()
         }
     }
 }

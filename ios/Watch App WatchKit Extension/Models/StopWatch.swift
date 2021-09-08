@@ -11,7 +11,11 @@ class StopWatch: ObservableObject {
     @Published var secondsElapsed = 0.0
     var timer = Timer()
     
-    var disaplyedTimer: String {
+    var secondsDisplay: String {
+        return String(Int(secondsElapsed))
+    }
+    
+    var completeDisplay: String {
         let decimals = Int(secondsElapsed.truncatingRemainder(dividingBy: 1) * 10)
         let seconds = Int(secondsElapsed) % 60
         let minutes = Int(secondsElapsed / 60) % 60
