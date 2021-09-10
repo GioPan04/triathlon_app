@@ -16,11 +16,11 @@ struct ActivityScreen: View {
         NavigationView {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text("\(workoutManager.heartRate)")
+                    Text(String(format: "%.2f bpm", workoutManager.heartRate))
                         .font(.title2)
-                    Text("\(workoutManager.distance)")
+                    Text(String(format: "%.2f m", workoutManager.distance))
                         .font(.title3)
-                    Text("\(workoutManager.speed)")
+                    Text(String(format: "%.2f m/s", workoutManager.speed))
                         .font(.caption)
                     Spacer()
                     NavigationLink(
