@@ -69,6 +69,7 @@ class WorkoutManager: NSObject, ObservableObject {
             //HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
             HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
             HKQuantityType.quantityType(forIdentifier: .distanceCycling)!,
+            HKQuantityType.quantityType(forIdentifier: .walkingSpeed)!,
             HKObjectType.activitySummaryType()
         ]
 
@@ -121,23 +122,42 @@ class WorkoutManager: NSObject, ObservableObject {
     //@Published var activeEnergy: Double = 0
     @Published var distance: Double = 0
     @Published var workout: HKWorkout?
+    @Published var speed: Double = 0
+    var lastDistance: Date = Date()
 
     func updateForStatistics(_ statistics: HKStatistics?) {
         guard let statistics = statistics else { return }
 
         DispatchQueue.main.async {
             switch statistics.quantityType {
-            case HKQuantityType.quantityType(forIdentifier: .heartRate):
-                let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
-                self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-                self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-            case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning), HKQuantityType.quantityType(forIdentifier: .distanceCycling):
-                let meterUnit = HKUnit.meter()
-                self.distance = statistics.sumQuantity()?.doubleValue(for: meterUnit) ?? 0
-            default:
-                return
+                case HKQuantityType.quantityType(forIdentifier: .heartRate):
+                    let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
+                    self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
+                    self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
+                case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning), HKQuantityType.quantityType(forIdentifier: .distanceCycling):
+                    let meterUnit = HKUnit.meter()
+                    let distance = statistics.sumQuantity()?.doubleValue(for: meterUnit) ?? 0
+                    
+                    self.calculateSpeed(newDistance: distance)
+                    self.distance = distance
+                default:
+                    return
             }
         }
+    }
+    
+    func calculateSpeed(newDistance: Double) -> Void {
+        let now = Date()
+        let last = self.lastDistance
+        let secDuration: Double = last.distance(to: now)
+        
+        let distanceDiff = newDistance - self.distance
+        let speed = distanceDiff / secDuration
+        print("Duration: \(secDuration) Distance: \(distanceDiff) Speed: \(speed)")
+        
+        self.speed = speed
+        
+        self.lastDistance = now
     }
 }
 

@@ -18,9 +18,9 @@ struct ActivityScreen: View {
                 VStack(alignment: .leading) {
                     Text("\(workoutManager.heartRate)")
                         .font(.title2)
-                    Text("500mt")
+                    Text("\(workoutManager.distance)")
                         .font(.title3)
-                    Text("10mt/s")
+                    Text("\(workoutManager.speed)")
                         .font(.caption)
                     Spacer()
                     NavigationLink(
