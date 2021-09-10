@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ActivityScreen: View {
     
-    @ObservedObject var stopWatch = StopWatch()
+    @EnvironmentObject var workoutManager: WorkoutManager
     
     var body: some View {
         NavigationView {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text(stopWatch.completeDisplay)
+                    Text("\(workoutManager.heartRate)")
                         .font(.title2)
                     Text("500mt")
                         .font(.title3)
@@ -33,15 +34,15 @@ struct ActivityScreen: View {
             }
                 .navigationTitle("Swimming")
         }.onAppear {
-            stopWatch.start()
+            workoutManager.selectedWorkout = HKWorkoutActivityType.running
         }.onDisappear {
-            stopWatch.stop()
+            workoutManager.endWorkout()
         }.padding()
     }
 }
 
 struct ActivityScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityScreen()
+        ActivityScreen().environmentObject(WorkoutManager())
     }
 }

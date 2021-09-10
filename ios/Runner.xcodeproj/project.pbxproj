@@ -30,6 +30,8 @@
 		857A74E826E8F5600094AB77 /* RestingStopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A74E726E8F5600094AB77 /* RestingStopWatch.swift */; };
 		85D230E426E1053A0028D84B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D230E326E1053A0028D84B /* HealthKit.framework */; };
 		85F5D99E26E75AEC00E391E8 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F5D99D26E75AEC00E391E8 /* StopWatch.swift */; };
+		85FF194126EB4D5A00546FCB /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FF194026EB4D5A00546FCB /* WorkoutController.swift */; };
+		85FF194326EB92A700546FCB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D230E026E0F73F0028D84B /* HealthKit.framework */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -130,6 +132,8 @@
 		85D230E226E1053A0028D84B /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		85D230E326E1053A0028D84B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		85F5D99D26E75AEC00E391E8 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
+		85FF194026EB4D5A00546FCB /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
+		85FF194226EB92A700546FCB /* Watch App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FF194326EB92A700546FCB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +197,8 @@
 		85797F4226E60F8D00C0FCFC /* Watch App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				85FF194226EB92A700546FCB /* Watch App WatchKit Extension.entitlements */,
+				85FF193F26EB4D4300546FCB /* Controllers */,
 				8546B2FE26E626FF00B26771 /* Views */,
 				8546B2FB26E626AE00B26771 /* Models */,
 				85797F4326E60F8D00C0FCFC /* HostingController.swift */,
@@ -223,6 +230,14 @@
 				85D230E026E0F73F0028D84B /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85FF193F26EB4D4300546FCB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85FF194026EB4D5A00546FCB /* WorkoutController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
@@ -482,6 +497,7 @@
 				85797F4A26E60F8D00C0FCFC /* NotificationController.swift in Sources */,
 				8546B2FD26E626BD00B26771 /* ActivityModel.swift in Sources */,
 				85797F4826E60F8D00C0FCFC /* ExtensionDelegate.swift in Sources */,
+				85FF194126EB4D5A00546FCB /* WorkoutController.swift in Sources */,
 				85797F4C26E60F8D00C0FCFC /* NotificationView.swift in Sources */,
 				85797F4E26E60F8D00C0FCFC /* ComplicationController.swift in Sources */,
 			);
@@ -625,6 +641,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Watch App WatchKit Extension/Watch App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = G6RAKRKZPR;
@@ -660,6 +677,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Watch App WatchKit Extension/Watch App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = G6RAKRKZPR;
@@ -692,6 +710,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Watch App WatchKit Extension/Watch App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = G6RAKRKZPR;
@@ -767,6 +786,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.4;
@@ -795,6 +815,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.4;
