@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RestingScreen: View {
     
-    @ObservedObject var stopwatch = StopWatch()
+    @ObservedObject var stopwatch: StopWatch = StopWatch()
     
     
     var body: some View {
